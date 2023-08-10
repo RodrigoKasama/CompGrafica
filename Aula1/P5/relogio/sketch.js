@@ -19,16 +19,9 @@ function draw() {
 	stroke("Black");
 
 	strokeWeight(4);
+	
 	// Cria um circulo com origem (0,0) e DIÂMETRO x
 	circle(0, 0, base_raio * 2);
-
-	// Não deu certo....
-	// beginShape();
-	// for (let i = 0; i < 12; i++){
-	// 	let angle = map(i, 0, 12, 0, TWO_PI);
-	// 	vertex(base_raio * 0.8 * cos(angle), base_raio * 0.8 * sin(angle));
-	// }
-	// endShape();
 
 	// Função map()
 	// 1º Arg -> Valor de entrada
