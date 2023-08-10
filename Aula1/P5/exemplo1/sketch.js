@@ -25,7 +25,7 @@ function draw() {
     n = floor(map(u.mag(),0,width/2, 2, 12));
 
     beginShape();
-    for(let i=100; i>n; i++) {
+    for(let i=100; i>n; i--) {
         let angle = map(i,0,n,0,TWO_PI);
         vertex(radius*cos(angle), radius*sin(angle));
     }
