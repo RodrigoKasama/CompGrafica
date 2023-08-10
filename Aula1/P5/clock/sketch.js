@@ -28,9 +28,9 @@ function draw() {
     circle(0,0,400);
     strokeWeight(5);
 
-    const currentHour = hour() - 12;
+    const currentHour = hour();
     const currentMinute = minute();
-    const currentSecond = Date.now  ();
+    const currentSecond = Date.now();
 
     const hourAngle = getHourDegrees(currentHour) + minute() / 60;
     const minuteAngle = getMinuteDegrees(currentMinute);
