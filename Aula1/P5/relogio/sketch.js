@@ -41,6 +41,7 @@ function draw() {
 
 	strokeWeight(8);
 	stroke(251, 124, 50);
+	
 	// Ponteiros - Hora | Minuto | Segundo
 	for (let i = 0; i < thetas_arr.length; i++) {
 
