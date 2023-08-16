@@ -5,8 +5,9 @@ function setup() {
     createCanvas(800, 600);
     pontos = [
         createVector(10, height / 2),
+        createVector(width / 2, 10),
         createVector(width - 10, height / 2),
-        createVector(width / 2, 10)
+        createVector(width / 2, height - 10)
     ];
 }
 
@@ -23,23 +24,32 @@ function combina(A, B, t) {
 
 function draw() {
 
-    let [A, B, C] = pontos;
-    let D, E, F;
+    let [A, B, C, D] = pontos;
+    let E, F, G, H;
 
     background(200);
-        noFill();
+    noFill();
 
-    line(A.x, A.y, C.x, C.y)
-    line(C.x, C.y, B.x, B.y)
+    // line(A.x, A.y, B.x, B.y);
+    // line(B.x, B.y, C.x, C.y);
+    // line(C.x, C.y, D.x, D.y);
 
     beginShape();
     for (let t = 0; t <= 1.0; t += 0.05) {
-        D = combina(A, C, t);
-        E = combina(C, B, t);
-        F = combina(D, E, t);
-        vertex(F.x, F.y);
+
+        E = combina(A, B, t);
+        F = combina(B, C, t);
+        G = combina(C, D, t);
+
+        H = combina(E, F, t);
+        I = combina(F, G, t);
+
+        J = combina(H, I, t);
+
+        vertex(J.x, J.y);
     }
-    vertex(B.x, B.y);
+    
+    vertex(D.x, D.y);
     endShape();
 
     desenhaPontos();
