@@ -44,7 +44,7 @@ void main(void)
     vec3 objectColor = vec3(1.0f,0.0f,0.0f);
 
     vec3 norm = normalize(normal);
-    
+
     vec3 lightDir = normalize(lightPos - fragCoord);
 
     float difCoef = max(dot(norm,lightDir),0.0f);
@@ -53,7 +53,7 @@ void main(void)
 
     vec3 diffuseColor = difCoef * lightColor;
 
-    vec3 finalColor = (ambientColor+diffuseColor) * objectColor;
+    vec3 finalColor = (ambientColor + diffuseColor) * objectColor;
     color = vec4(finalColor,1.0f);
 }
 """
@@ -176,8 +176,8 @@ def desenha():
     GL.glClear(GL.GL_COLOR_BUFFER_BIT|GL.GL_DEPTH_BUFFER_BIT)
 
     projection = glm.perspective(math.pi/4,800/600,0.1,100)
-    view = glm.lookAt(glm.vec3(0,2,12),glm.vec3(0,0,0),glm.vec3(0,1,0)) * glm.rotate(a,glm.vec3(1,0,0))
-    model = glm.mat4(1.0) 
+    view = glm.lookAt(glm.vec3(0,2,12),glm.vec3(0,0,0),glm.vec3(0,1,0))
+    model = glm.mat4(1.0) * glm.rotate(a,glm.vec3(1,0,0))
  
     GL.glBindVertexArray(malhaVAO)
     GL.glUseProgram(progId)

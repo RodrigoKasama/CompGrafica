@@ -123,9 +123,12 @@ def normal(M=4,N=4):
             p = f(u,v)
             pdu = f(u+du,v)
             pdv = f(u,v+dv)
+
             v1 = pdu-p
             v2 = pdv-p
+
             vn = glm.cross(v1,v2)
+            
             normal.append(vn.x)
             normal.append(vn.y)
             normal.append(vn.z)
